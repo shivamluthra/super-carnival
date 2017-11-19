@@ -48,6 +48,7 @@ public class SignUpForm extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jPasswordField2 = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,7 +56,6 @@ public class SignUpForm extends javax.swing.JFrame {
 
         jLabel2.setText("Username :");
 
-        jTextField1.setText("jTextField1");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -64,24 +64,23 @@ public class SignUpForm extends javax.swing.JFrame {
 
         jLabel3.setText("FullName : ");
 
-        jTextField2.setText("jTextField2");
-
         jLabel4.setText("Email :");
 
         jLabel5.setText("Password :");
 
-        jTextField3.setText("jTextField3");
-
-        jPasswordField1.setText("jPasswordField1");
-
         jLabel6.setText("ConfirmPassword :");
-
-        jPasswordField2.setText("jPasswordField2");
 
         jButton1.setText("SignUp");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Login");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -115,15 +114,22 @@ public class SignUpForm extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addGap(143, 143, 143))
             .addGroup(layout.createSequentialGroup()
-                .addGap(105, 105, 105)
+                .addContainerGap()
+                .addComponent(jButton2)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jButton2)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -175,7 +181,6 @@ public class SignUpForm extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Congratulations you're signed up :)");
         LoginForm l = new LoginForm();
         l.setVisible(true);
-            
         }catch(ClassNotFoundException | SQLException e){
             e.printStackTrace();
         }
@@ -184,6 +189,13 @@ public class SignUpForm extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        LoginForm  lin = new LoginForm();
+        lin.setVisible(true);
+        this.hide();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,6 +234,7 @@ public class SignUpForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

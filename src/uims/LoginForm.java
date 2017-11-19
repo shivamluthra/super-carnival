@@ -53,7 +53,6 @@ public class LoginForm extends javax.swing.JFrame {
 
         jLabel2.setText(" USERNAME :");
 
-        jTextField1.setText("jTextField1");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -62,7 +61,6 @@ public class LoginForm extends javax.swing.JFrame {
 
         jLabel3.setText("PASSWORD : ");
 
-        jPasswordField1.setText("jPasswordField1");
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordField1ActionPerformed(evt);
@@ -140,14 +138,17 @@ public class LoginForm extends javax.swing.JFrame {
             pst.setString(2, String.valueOf(jPasswordField1.getPassword()));
             rs=pst.executeQuery();
             if(rs.next()){
-                JOptionPane.showMessageDialog(null, "Welcome user..");
-                Welcome w = new Welcome();
+                
+                JOptionPane.showMessageDialog(null, "Welcome");
+                Welcome w = new Welcome(rs);
                 w.setVisible(true);
+                this.hide();
             }
             else{
                 JOptionPane.showMessageDialog(null, "Invalid username or passsword","Access Denied", JOptionPane.ERROR_MESSAGE);
             }
-        }catch(Exception e){
+        }
+        catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
